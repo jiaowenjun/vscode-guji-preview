@@ -1,7 +1,7 @@
 {
   "name": "vscode-guji-preview",
   "displayName": "vscode-guji-preview",
-  "description": "VsCode guji 文档预览插件",
+  "description": "VsCode Guji 文档预览插件",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.78.0"
@@ -14,8 +14,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-guji-preview.helloWorld",
-        "title": "Hello World"
+        "command": "vscode-guji-preview.preview",
+        "title": "Guji Preview: 预览 Guji 文件"
       }
     ]
   },

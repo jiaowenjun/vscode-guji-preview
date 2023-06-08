@@ -6,7 +6,7 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   let disposable = vscode.commands.registerCommand(
-    "vscode-guji-preview.helloWorld",
+    "vscode-guji-preview.preview",
     () => {
       // 1. 获取编辑器 .gj 文件的文档内容
 
