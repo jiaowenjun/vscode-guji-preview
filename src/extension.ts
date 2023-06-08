@@ -1,26 +1,42 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+  console.log(
+    'Congratulations, your extension "vscode-guji-preview" is now active!'
+  );
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "vscode-guji-preview" is now active!');
+  let disposable = vscode.commands.registerCommand(
+    "vscode-guji-preview.helloWorld",
+    () => {
+      // 1. 获取编辑器 .gj 文件的文档内容
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('vscode-guji-preview.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from vscode-guji-preview!');
-	});
+      // 2. 将 .gj 文档转为 html
+      const html = `<!DOCTYPE html>
+	  <html lang="en">
+	  <head>
+		  <meta charset="UTF-8">
+		  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		  <title>预览窗口</title>
+	  </head>
+	  <body>
+		  预览内容
+	  </body>
+	  </html>`;
 
-	context.subscriptions.push(disposable);
+      // 3. 创建 Webview 预览窗口
+      const panel = vscode.window.createWebviewPanel(
+        "guji-preview",
+        "预览",
+        vscode.ViewColumn.Beside
+      );
+
+      // 4. 在预览窗口展示 html
+      panel.webview.html = html;
+    }
+  );
+
+  context.subscriptions.push(disposable);
 }
 
-// This method is called when your extension is deactivated
 export function deactivate() {}
