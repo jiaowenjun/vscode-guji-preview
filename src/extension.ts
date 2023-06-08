@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 import * as path from "path";
+import { toHtml } from "./parser/html";
+import { parse } from "./parser/parse";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log(
@@ -16,26 +18,15 @@ export function activate(context: vscode.ExtensionContext) {
         return;
       }
       const text = editor.document.getText();
-      const previewTitle = `预览 ${path.basename(editor.document.fileName)}`;
+      const title = `预览 ${path.basename(editor.document.fileName)}`;
 
       // 2. 将 .gj 文本转为 html
-      const html = `<!DOCTYPE html>
-        <html lang="en">
-        <head>
-          <meta charset="UTF-8">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>${previewTitle}</title>
-        </head>
-        <body>
-          ${text}
-        </body>
-        </html>`;
+      const html = toHtml(title, parse(text));
 
       // 3. 创建 Webview 预览窗口
       const panel = vscode.window.createWebviewPanel(
         "guji-preview",
-        previewTitle,
+        title,
         vscode.ViewColumn.Beside
       );
 
