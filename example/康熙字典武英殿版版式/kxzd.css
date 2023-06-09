@@ -1,0 +1,124 @@
+html {
+  font-size: 50px;
+}
+
+.single-page {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  width: 10rem;
+}
+
+.frame {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 4px;
+  width: 8.8rem;
+  box-sizing: border-box;
+  border: 5px solid black;
+  overflow: hidden;
+}
+
+.page-cross {
+  font-family: 中华书局宋体00平面, HanaMinA;
+  font-size: 0.5rem;
+  writing-mode: vertical-rl;
+  margin-right: -0.35rem;
+  float: right;
+  color: lightgray;
+}
+
+.left-page .frame {
+  margin-left: 1.2rem;
+  margin-right: 0;
+  border-right: 0;
+}
+
+.right-page .frame {
+  margin-right: 1.2rem;
+  margin-left: 0;
+  border-left: 0;
+}
+
+.lines {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 1px solid gray;
+  width: 8rem;
+}
+
+.left-page .lines {
+  margin-right: auto;
+}
+
+.right-page .lines {
+  margin-left: auto;
+}
+
+.line {
+  box-sizing: border-box;
+  width: 1rem;
+  height: 12rem;
+}
+
+.normal {
+  font-family: "康熙傳承版 KangXiZiDian.com";
+}
+
+.normal-grid {
+  height: 1rem;
+  width: 1rem;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  text-align: center;
+  writing-mode: vertical-rl;
+}
+
+.small {
+  font-family: 中华书局宋体00平面, HanaMinA;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.small-line {
+  width: 0.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-line.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-grid {
+  height: 0.5rem;
+  width: 0.5rem;
+  font-size: 0.4rem;
+  box-sizing: border-box;
+  text-align: center;
+  writing-mode: vertical-rl;
+}
+
+.book-name {
+  border: 1px gray solid;
+  border-radius: 6px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  margin-right: -0.5px;
+  margin-left: -0.5px;
+}
+
+.first-half {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+.second-half {
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
