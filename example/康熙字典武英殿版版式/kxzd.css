@@ -22,9 +22,17 @@ html {
   font-family: 中华书局宋体00平面, HanaMinA;
   font-size: 0.5rem;
   writing-mode: vertical-rl;
+  color: lightgray;
+}
+
+.left-page .page-cross {
   margin-right: -0.35rem;
   float: right;
-  color: lightgray;
+}
+
+.right-page .page-cross {
+  margin-left: -0.35rem;
+  float: left;
 }
 
 .left-page .frame {
