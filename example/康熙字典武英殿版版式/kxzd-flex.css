@@ -9,6 +9,8 @@ html {
 .single-page {
   border: 1px solid lightgray;
   border-radius: 10px;
+  min-width: 11.5rem;
+  max-width: 14rem;
 }
 
 .frame {
