@@ -99,6 +99,10 @@ html {
   margin-left: 1px;
 }
 
+.book-name .small-grid {
+  width: 0.48rem;
+}
+
 .first-half {
   border-bottom: 0;
   border-bottom-left-radius: 0;
