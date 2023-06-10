@@ -90,7 +90,7 @@ html {
   writing-mode: vertical-rl;
 }
 
-.book-name {
+.book {
   border: 1px gray solid;
   border-radius: 6px;
   margin-top: -1px;
@@ -99,7 +99,7 @@ html {
   margin-left: 1px;
 }
 
-.book-name .small-grid {
+.book .small-grid {
   width: 0.96rem;
 }
 
