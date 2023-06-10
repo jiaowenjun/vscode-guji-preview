@@ -1,0 +1,45 @@
+.book {
+  border: 1px black solid;
+  border-radius: 0.2rem;
+  margin-top: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.book-half:first-child {
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-bottom: 1px black solid;
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.book-half:last-child {
+  border-top: 1px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  margin-top: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+}
+
+.book + div {
+  margin-top: -1px;
+}
+
+.book + .book {
+  margin-top: -2px;
+}
+
+.book + .book-half {
+  margin-top: -2px;
+}
+
+.book-half + .book {
+  margin-top: -2px;
+}

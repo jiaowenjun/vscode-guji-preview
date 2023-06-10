@@ -1,0 +1,35 @@
+.lines {
+  width: min-content;
+  border: 1px black solid;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.grid {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.large .grid {
+  height: 2rem;
+  width: 2rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.small {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.small-line {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small .grid {
+  height: 1rem;
+  width: 1rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}

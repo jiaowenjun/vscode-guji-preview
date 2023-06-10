@@ -19,12 +19,12 @@ si = "large"
 [[l]]
 t = "子集上"
 si = "large"
-i = 2
+i = 1
 
 [[l]]
 t = "一部"
 si = "large"
-i = 4
+i = 2
 
 [[l]]
 [[l.c]]
