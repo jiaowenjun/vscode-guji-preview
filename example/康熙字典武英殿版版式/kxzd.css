@@ -16,38 +16,24 @@ html {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 4px;
-  width: 8.8rem;
   border: 5px solid black;
   overflow: hidden;
-}
-
-.page-cross {
-  font-family: 中华书局宋体00平面, HanaMinA;
-  font-size: 0.5rem;
-  writing-mode: vertical-rl;
-  color: lightgray;
-}
-
-.left-page .page-cross {
-  margin-right: -0.35rem;
-  float: right;
-}
-
-.right-page .page-cross {
-  margin-left: -0.35rem;
-  float: left;
+  width: 8rem;
+  box-sizing: content-box;
 }
 
 .left-page .frame {
   margin-left: 1.2rem;
   margin-right: 0;
+  padding-right: 0.6rem;
   border-right: 0;
 }
 
 .right-page .frame {
-  margin-right: 1.2rem;
-  margin-left: 0;
   border-left: 0;
+  margin-right: 1.2rem;
+  padding-left: 0.6rem;
+  margin-left: 0;
 }
 
 .lines {
@@ -83,7 +69,7 @@ html {
 }
 
 .small {
-  font-family: 中华书局宋体00平面, HanaMinA;
+  font-family: 中华书局宋体00平面;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -92,9 +78,6 @@ html {
   width: 0.5rem;
   display: flex;
   flex-direction: column;
-}
-
-.small-line.center {
   margin-left: auto;
   margin-right: auto;
 }
@@ -112,8 +95,8 @@ html {
   border-radius: 6px;
   margin-top: -1px;
   margin-bottom: -1px;
-  margin-right: -0.5px;
-  margin-left: -0.5px;
+  margin-right: -1px;
+  margin-left: 1px;
 }
 
 .first-half {
