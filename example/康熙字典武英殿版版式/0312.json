@@ -1,21 +1,11 @@
 [
-  {
-    "normal": "康熙字典"
-  },
-  {
-    "indent": 1,
-    "normal": "子集上"
-  },
-  {
-    "indent": 2,
-    "normal": "一部"
-  },
-  {
-    "normal": "一",
-    "small": "古文"
-  },
-  {},
-  {},
-  {},
-  {}
+  [{ "type": "large", "text": "康熙字典" }],
+  [{ "indent": 2, "type": "large", "text": "子集上" }],
+  [{ "indent": 4, "type": "large", "text": "一部" }],
+  [],
+  [],
+  [],
+  [],
+  [],
+  []
 ]

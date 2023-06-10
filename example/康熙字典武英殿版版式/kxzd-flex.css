@@ -60,16 +60,16 @@ html {
   flex-direction: column;
 }
 
-.normal {
+.large {
   font-family: "康熙傳承版 KangXiZiDian.com";
   writing-mode: vertical-rl;
 }
 
-.normal.indent1 {
+.large.indent1 {
   text-indent: 1em;
 }
 
-.normal.indent2 {
+.large.indent2 {
   text-indent: 2em;
 }
 
