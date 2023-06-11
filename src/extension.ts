@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 import * as path from "path";
-import { toHtml } from "./generator/html";
+import { toHtml } from "./html/html";
 import { parse } from "./parser/parse";
 
 export function activate(context: vscode.ExtensionContext) {

@@ -1,5 +1,5 @@
 import { test } from "vitest";
-import { parseLine } from "../src/parser/line";
+import { parseLarge } from "../src/parser/large";
 import { renderToString } from "react-dom/server";
 
 test("parseLine", () => {
@@ -7,7 +7,7 @@ test("parseLine", () => {
     t: "康熙字典",
     si: "large",
   };
-  const line = parseLine(lineObj);
+  const line = parseLarge(lineObj);
   if (line) {
     console.log(renderToString(line));
   }
