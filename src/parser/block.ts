@@ -31,7 +31,7 @@ export function parseBlocks(blks: Block[]) {
     } else {
       if (blk.st === "br") {
         mergeFrags();
-      } else if (blk.st === "book") {
+      } else if (blk.st === "book" || blk.st === "book-half") {
         frags.push(parseBook(blk));
       } else if (blk.t) {
         frags.push(blk.t);
