@@ -1,5 +1,7 @@
 import { createElement, ReactNode } from "react";
 
+let cnt = 0;
+
 export function toSmallLine(frags: (string | ReactNode)[]) {
   let children: ReactNode[] = [];
   let idx = 0;
@@ -14,5 +16,9 @@ export function toSmallLine(frags: (string | ReactNode)[]) {
       children.push(frag);
     }
   });
-  return createElement("div", { className: "small-line" }, children);
+  return createElement(
+    "div",
+    { className: "small-line", key: cnt++ % 2 },
+    children
+  );
 }
