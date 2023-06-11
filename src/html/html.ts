@@ -7,9 +7,12 @@ export function toHtml(title: string, body: string): string {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${title}</title>
         <style>
+          html {
+            font-size: 23px;
+          }
           .lines {
             width: min-content;
-            border: 1px black solid;
+            border: 1px solid;
             display: flex;
             flex-direction: row-reverse;
           }
@@ -41,6 +44,52 @@ export function toHtml(title: string, body: string): string {
             width: 1rem;
             font-size: 0.8rem;
             line-height: 1rem;
+          }
+          
+          .book {
+            border: 1px solid;
+            border-radius: 0.2rem;
+            margin-top: -1px;
+            margin-left: -1px;
+            margin-right: -1px;
+          }
+          
+          .book-half:first-child {
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            border-bottom-left-radius: 0.2rem;
+            border-bottom-right-radius: 0.2rem;
+            margin-bottom: -1px;
+            margin-left: -1px;
+            margin-right: -1px;
+          }
+          
+          .book-half:last-child {
+            border-top: 1px solid;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-top-left-radius: 0.2rem;
+            border-top-right-radius: 0.2rem;
+            margin-top: -1px;
+            margin-left: -1px;
+            margin-right: -1px;
+          }
+          
+          .book + div {
+            margin-top: -1px;
+          }
+          
+          .book + .book {
+            margin-top: -2px;
+          }
+          
+          .book + .book-half {
+            margin-top: -2px;
+          }
+          
+          .book-half + .book {
+            margin-top: -2px;
           }
         </style>
     </head>

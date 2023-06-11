@@ -1,6 +1,6 @@
 .lines {
   width: min-content;
-  border: 1px black solid;
+  border: 1px solid;
   display: flex;
   flex-direction: row-reverse;
 }
