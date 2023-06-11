@@ -1,6 +1,5 @@
 import { test } from "vitest";
 import { parseLines } from "../src/parser/lines";
-import { toHtml } from "../src/html/html";
 import { renderToString } from "react-dom/server";
 
 test("parse", () => {
@@ -63,5 +62,5 @@ test("parse", () => {
   }
   `;
   const linesObj = JSON.parse(text);
-  console.log(toHtml(linesObj.p, renderToString(parseLines(linesObj.l))));
+  console.log(renderToString(parseLines(linesObj.l)));
 });
