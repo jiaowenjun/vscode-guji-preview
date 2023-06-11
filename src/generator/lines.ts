@@ -1,3 +1,6 @@
-export function toLines(lines: string[]) {
-  return `<div class="lines">${lines.join("")}</div>`;
+import { renderToString } from "react-dom/server";
+import { createElement, ReactNode } from "react";
+
+export function toLines(lines: ReactNode[]) {
+  return createElement("div", { className: "lines" }, lines);
 }
