@@ -8,7 +8,7 @@ export function toHtml({ title, body }: { title: string; body: string }) {
           <title>${title}</title>
           <style>
             html {
-              font-size: 23px;
+              font-size: 30px;
             }
             .lines {
               width: min-content;
@@ -26,7 +26,7 @@ export function toHtml({ title, body }: { title: string; body: string }) {
               font-family: "康熙傳承版 KangXiZiDian.com";
               height: 2rem;
               width: 2rem;
-              font-size: 1.6rem;
+              font-size: 1.8rem;
               line-height: 2rem;
             }
             
@@ -53,7 +53,10 @@ export function toHtml({ title, body }: { title: string; body: string }) {
               border-radius: 0.2rem;
               margin-top: -1px;
               margin-left: -1px;
-              margin-right: -1px;
+            }
+            
+            .book:last-child {
+              margin-bottom: -1px;
             }
             
             .book-half:first-child {
@@ -64,7 +67,6 @@ export function toHtml({ title, body }: { title: string; body: string }) {
               border-bottom-right-radius: 0.2rem;
               margin-bottom: -1px;
               margin-left: -1px;
-              margin-right: -1px;
             }
             
             .book-half:last-child {
@@ -75,7 +77,6 @@ export function toHtml({ title, body }: { title: string; body: string }) {
               border-top-right-radius: 0.2rem;
               margin-top: -1px;
               margin-left: -1px;
-              margin-right: -1px;
             }
             
             .book + div {
@@ -83,7 +84,8 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             }
             
             .book + .book {
-              margin-top: -2px;
+              margin-top: -1px;
+              margin-bottom: -2px;
             }
             
             .book + .book-half {
@@ -92,6 +94,14 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             
             .book-half + .book {
               margin-top: -2px;
+            }
+            
+            .line:first-child .small-line:first-child .book {
+              margin-right: -1px;
+            }
+            
+            .line:first-child .small-line:first-child .book-half {
+              margin-right: -1px;
             }
           </style>
       </head>
