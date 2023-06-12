@@ -1,71 +1,52 @@
-# vscode-guji-preview README
+# vscode-guji-preview
 
-This is the README for your extension "vscode-guji-preview". After writing up a brief description, we recommend including the following sections.
+|    特殊符号    |  作用范围  |       含义       |
+| :------------: | :--------: | :--------------: |
+| `//`_comment_  |   至行尾   |      行注释      |
+|    `@`_num_    |   至行尾   |   指定当前页数   |
+|     `空行`     |            |     大行换行     |
+|     `EOF`      |            |     大行换行     |
+|   `#␣`_text_   |   至行尾   |     一行大字     |
+|  `##␣`_text_   |   至行尾   | 一行大字缩进一格 |
+|  `###␣`_text_  |   至行尾   | 一行大字缩进两格 |
+|  `↵` (换行符)  |            |     小行换行     |
+|   `#`_char_    | 后一个字符 |  行内的一个大字  |
+| `【`_text_`】` | 括号内文本 |     行内书名     |
+| `【`_text_`↵`  | 括号至行尾 |    行内半书名    |
+| `^`_text_`】`  | 行首至括号 |    行内半书名    |
+|      `*`       |     无     |     行内空格     |
 
-## Features
+## 例子
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+《康熙字典》武英殿版第三一二页:
 
-For example if there is an image subfolder under your extension project workspace:
+![Alt text](example/kxzd/0312.jpg)
 
-\!\[feature X\]\(images/feature-x.png\)
+对应的 guji 文档如下:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+```gj
+// 0312.gj
 
-## Requirements
+@312
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+# 康熙字典
 
-## Extension Settings
+## 子集上
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### 一部
 
-For example:
+#一古文#弌【唐韻】【韻會】於悉切【集韻】【正韻】益悉切𠀤漪入聲
+【說文】惟初大始道立於一造分天地化成萬物
 
-This extension contributes the following settings:
+【廣韻】數之始也物之極也【易繫辭】天一地二【老子道德經】道生
+一一生二*又【廣韻】同也【禮樂記】禮樂𠛬政其極一也【史記儒
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+林傳】韓生推詩之意而爲內外傳數萬言其語頗與齊魯閒殊
+然其歸一也*又少也【顏延之庭誥文】選書務一不尚煩密【何
 
-## Known Issues
+承天答顏永嘉書】竊願吾子舍兼而遵一也*又【增韻】純也【易
+繫辭】天下之動貞夫一【老子道德經】天得一以淸地得一以寧
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+神得一以靈谷得一以盈萬物得一以生侯王得一以爲天下
+正*又均也【唐書薛平傳】兵鎧完礪徭賦均一*又誠也【中庸】
+```
