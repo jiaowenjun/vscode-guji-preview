@@ -1,17 +1,17 @@
-interface BlockModel {
-  t: string | undefined;
-  st: string | undefined;
-  si: string | undefined;
-  i: number | undefined;
+export interface BlockModel {
+  t?: string;
+  st?: string;
+  si?: string;
+  i?: number;
 }
 
-interface CompoLineModel {
+export interface CompoLineModel {
   c: BlockModel[];
 }
 
-type LineModel = CompoLineModel | BlockModel;
+export type LineModel = CompoLineModel | BlockModel;
 
-interface LinesModel {
+export interface LinesModel {
   p: number;
   l: LineModel[];
 }

@@ -1,5 +1,6 @@
 import { expect, test } from "vitest";
-import { parseLines } from "../src/parser/parse-lines";
+import { parseLine } from "../src/parser/parse-line";
+import { split } from "../src/parser/split-line";
 
 test("toml", () => {
   const text = `// 0312.gj
@@ -29,6 +30,10 @@ test("toml", () => {
   
   
 `;
-  const lines = parseLines(text);
-  console.log(lines);
+  const lines = split(text);
+  lines.forEach((line, i) => {
+    console.log("\n" + i + ":");
+    console.log(line);
+    console.log(parseLine(line));
+  });
 });

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { grid } from "./grid";
 import { book } from "./book";
+import { BlockModel } from "./model";
 
 let cnt = 0;
 

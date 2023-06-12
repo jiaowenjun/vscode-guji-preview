@@ -4,6 +4,7 @@ import * as toml from "toml";
 import { toHtml } from "./components/html";
 import { lines } from "./components/lines";
 import { renderToString } from "react-dom/server";
+import { parseLines } from "./parser/parse-lines";
 
 export function activate(context: vscode.ExtensionContext) {
   console.log(
@@ -23,9 +24,9 @@ export function activate(context: vscode.ExtensionContext) {
       const title = `预览 ${path.basename(editor.document.fileName)}`;
 
       // 2. 将 .gj 文本转为 html
-      const model = toml.parse(text);
+      const model = parseLines(text);
       const html = toHtml({
-        title: model.p,
+        title: model.p.toString(),
         body: renderToString(lines({ model })),
       });
       console.log(html);

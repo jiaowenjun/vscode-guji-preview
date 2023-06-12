@@ -2,6 +2,7 @@ import * as React from "react";
 import { smallLine } from "./small-line";
 import { small } from "./small";
 import { large } from "./large";
+import { BlockModel, LineModel } from "./model";
 
 let cnt = 0;
 
