@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import * as toml from "toml";
-import { parseLines } from "./parser/lines";
-import { toHtml } from "./html/html";
+import { html } from "../src/components/html";
+import { lines } from "../src/components/lines";
 import { renderToString } from "react-dom/server";
 
 export function activate(context: vscode.ExtensionContext) {
@@ -23,8 +23,11 @@ export function activate(context: vscode.ExtensionContext) {
       const title = `预览 ${path.basename(editor.document.fileName)}`;
 
       // 2. 将 .gj 文本转为 html
-      const linesObj = toml.parse(text);
-      const html = toHtml(linesObj.p, renderToString(parseLines(linesObj.l)));
+      const model = toml.parse(text);
+      const htmlStr = html({
+        title: model.p,
+        body: renderToString(lines({ model })),
+      });
 
       // 3. 创建 Webview 预览窗口
       const panel = vscode.window.createWebviewPanel(
@@ -34,7 +37,7 @@ export function activate(context: vscode.ExtensionContext) {
       );
 
       // 4. 在预览窗口展示 html
-      panel.webview.html = html;
+      panel.webview.html = htmlStr;
     }
   );
 

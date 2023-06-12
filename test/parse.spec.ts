@@ -1,7 +1,7 @@
 import { test } from "vitest";
-import { parseLines } from "../src/parser/lines";
-import { toHtml } from "../src/html/html";
 import { renderToString } from "react-dom/server";
+import { html } from "../src/components/html";
+import { lines } from "../src/components/lines";
 
 test("parse", () => {
   const text = `
@@ -62,6 +62,11 @@ test("parse", () => {
     ]
   }
   `;
-  const linesObj = JSON.parse(text);
-  console.log(toHtml(linesObj.p, renderToString(parseLines(linesObj.l))));
+  const model = JSON.parse(text);
+  console.log(
+    html({
+      title: model.p,
+      body: renderToString(lines({ model })),
+    })
+  );
 });

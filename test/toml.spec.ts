@@ -1,11 +1,11 @@
 import toml from "toml";
 import { test } from "vitest";
-import { parseLines } from "../src/parser/lines";
-import { toHtml } from "../src/html/html";
 import { renderToString } from "react-dom/server";
+import { html } from "../src/components/html";
+import { lines } from "../src/components/lines";
 
 test("toml", () => {
-  const linesObj = toml.parse(`
+  const model = toml.parse(`
 p = 312
 
 [[l]]
@@ -28,5 +28,10 @@ si = "large"
 t = "唐韻"
 st = "book"
 `);
-  console.log(toHtml(linesObj.p, renderToString(parseLines(linesObj.l))));
+  console.log(
+    html({
+      title: model.p,
+      body: renderToString(lines({ model })),
+    })
+  );
 });
