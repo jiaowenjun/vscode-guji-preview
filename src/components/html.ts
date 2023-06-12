@@ -50,7 +50,7 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             
             .book {
               border: 1px solid;
-              border-radius: 0.2rem;
+              border-radius: 0.3rem;
               margin-top: -1px;
               margin-left: -1px;
             }
@@ -63,8 +63,8 @@ export function toHtml({ title, body }: { title: string; body: string }) {
               border-left: 1px solid;
               border-right: 1px solid;
               border-bottom: 1px solid;
-              border-bottom-left-radius: 0.2rem;
-              border-bottom-right-radius: 0.2rem;
+              border-bottom-left-radius: 0.3rem;
+              border-bottom-right-radius: 0.3rem;
               margin-bottom: -1px;
               margin-left: -1px;
             }
@@ -73,8 +73,8 @@ export function toHtml({ title, body }: { title: string; body: string }) {
               border-top: 1px solid;
               border-left: 1px solid;
               border-right: 1px solid;
-              border-top-left-radius: 0.2rem;
-              border-top-right-radius: 0.2rem;
+              border-top-left-radius: 0.3rem;
+              border-top-right-radius: 0.3rem;
               margin-top: -1px;
               margin-left: -1px;
             }
