@@ -1,4 +1,4 @@
-export function html({ title, body }: { title: string; body: string }) {
+export function toHtml({ title, body }: { title: string; body: string }) {
   return `<!DOCTYPE html>
       <html lang="en">
       <head>
@@ -23,6 +23,7 @@ export function html({ title, body }: { title: string; body: string }) {
             }
             
             .large .grid {
+              font-family: "康熙傳承版 KangXiZiDian.com";
               height: 2rem;
               width: 2rem;
               font-size: 1.6rem;
@@ -40,6 +41,7 @@ export function html({ title, body }: { title: string; body: string }) {
             }
             
             .small .grid {
+              font-family: "中华书局宋体00平面";
               height: 1rem;
               width: 1rem;
               font-size: 0.8rem;
