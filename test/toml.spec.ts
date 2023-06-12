@@ -1,7 +1,7 @@
 import toml from "toml";
 import { test } from "vitest";
 import { renderToString } from "react-dom/server";
-import { html } from "../src/components/html";
+import { toHtml } from "../src/components/html";
 import { lines } from "../src/components/lines";
 
 test("toml", () => {
@@ -29,7 +29,7 @@ t = "唐韻"
 st = "book"
 `);
   console.log(
-    html({
+    toHtml({
       title: model.p,
       body: renderToString(lines({ model })),
     })

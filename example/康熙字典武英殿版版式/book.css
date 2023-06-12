@@ -3,7 +3,10 @@
   border-radius: 0.2rem;
   margin-top: -1px;
   margin-left: -1px;
-  margin-right: -1px;
+}
+
+.book:last-child {
+  margin-bottom: -1px;
 }
 
 .book-half:first-child {
@@ -14,7 +17,6 @@
   border-bottom-right-radius: 0.2rem;
   margin-bottom: -1px;
   margin-left: -1px;
-  margin-right: -1px;
 }
 
 .book-half:last-child {
@@ -25,7 +27,6 @@
   border-top-right-radius: 0.2rem;
   margin-top: -1px;
   margin-left: -1px;
-  margin-right: -1px;
 }
 
 .book + div {
@@ -33,7 +34,8 @@
 }
 
 .book + .book {
-  margin-top: -2px;
+  margin-top: -1px;
+  margin-bottom: -2px;
 }
 
 .book + .book-half {
@@ -42,4 +44,12 @@
 
 .book-half + .book {
   margin-top: -2px;
+}
+
+.line:first-child .small-line:first-child .book {
+  margin-right: -1px;
+}
+
+.line:first-child .small-line:first-child .book-half {
+  margin-right: -1px;
 }

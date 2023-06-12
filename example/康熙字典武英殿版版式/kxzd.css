@@ -69,7 +69,7 @@ html {
 }
 
 .small {
-  font-family: 中华书局宋体00平面;
+  font-family: "中华书局宋体00平面";
   display: flex;
   flex-direction: row-reverse;
 }

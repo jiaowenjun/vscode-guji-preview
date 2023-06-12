@@ -11,9 +11,10 @@
 }
 
 .large .grid {
+  font-family: "康熙傳承版 KangXiZiDian.com";
   height: 2rem;
   width: 2rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 2rem;
 }
 
@@ -28,6 +29,7 @@
 }
 
 .small .grid {
+  font-family: "中华书局宋体00平面";
   height: 1rem;
   width: 1rem;
   font-size: 0.8rem;
