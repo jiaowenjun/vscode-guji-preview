@@ -6,6 +6,7 @@ import { renderToString } from "react-dom/server";
 import { parseLines } from "./parser/parse-lines";
 
 let currentPanel: vscode.WebviewPanel | undefined = undefined;
+let currentEditor: vscode.TextEditor | undefined = undefined;
 
 export function activate(context: vscode.ExtensionContext) {
   console.log(
@@ -17,6 +18,15 @@ export function activate(context: vscode.ExtensionContext) {
     () => {
       if (currentPanel) {
         currentPanel.reveal(vscode.ViewColumn.Beside);
+        const editor = vscode.window.activeTextEditor;
+        if (editor && currentEditor && editor !== currentEditor) {
+          currentEditor = editor;
+          const content = getWebviewContent();
+          if (content) {
+            currentPanel.title = content.title;
+            currentPanel.webview.html = content.html;
+          }
+        }
       } else {
         // 解析当前编辑器内容
         const content = getWebviewContent();
@@ -34,29 +44,42 @@ export function activate(context: vscode.ExtensionContext) {
           vscode.ViewColumn.Beside
         );
 
-        // Webview 销毁时
-        currentPanel.onDidDispose(
-          () => {
-            currentPanel = undefined;
+        // 更新 Webview 内容
+        currentPanel.title = content.title;
+        currentPanel.webview.html = content.html;
+
+        // 记录当前编辑器
+        currentEditor = content.editor;
+
+        // 编辑器内容修改时同步更新
+        const onChange = vscode.workspace.onDidChangeTextDocument(
+          (e) => {
+            if (
+              currentEditor &&
+              currentPanel &&
+              e.document === currentEditor.document
+            ) {
+              const content = getWebviewContent();
+              if (content) {
+                currentPanel.title = content.title;
+                currentPanel.webview.html = content.html;
+              }
+            }
           },
           null,
           context.subscriptions
         );
 
-        // 更新 Webview 内容
-        currentPanel.title = content.title;
-        currentPanel.webview.html = content.html;
-
-        // 编辑器内容修改时同步更新
-        vscode.workspace.onDidChangeTextDocument((e) => {
-          if (currentPanel) {
-            const content = getWebviewContent();
-            if (content) {
-              currentPanel.title = content.title;
-              currentPanel.webview.html = content.html;
-            }
-          }
-        });
+        // Webview 销毁时
+        currentPanel.onDidDispose(
+          () => {
+            currentPanel = undefined;
+            currentEditor = undefined;
+            onChange.dispose();
+          },
+          null,
+          context.subscriptions
+        );
       }
     }
   );
@@ -82,7 +105,7 @@ function getWebviewContent() {
     body: renderToString(lines({ model })),
   });
 
-  return { title, html };
+  return { editor, title, html };
 }
 
 export function deactivate() {}
