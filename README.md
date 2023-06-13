@@ -20,7 +20,7 @@
 
 《康熙字典》武英殿版第三一二页:
 
-![Alt text](example/kxzd/0312.jpg)
+![Alt text](https://www.kangxizidian.com/kangxi2/0312.jpg)
 
 对应的 guji 文档如下:
 
