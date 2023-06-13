@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { parseLines } from "../src/parser/parse-lines";
 
-test("toml", () => {
+test("parse", () => {
   const text = `// 0312.gj
 
   @312

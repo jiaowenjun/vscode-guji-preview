@@ -2,7 +2,7 @@ import { expect, test } from "vitest";
 import { parseLine } from "../src/parser/parse-line";
 import { split } from "../src/parser/split-line";
 
-test("toml", () => {
+test("parseLine", () => {
   const text = `// 0312.gj
 
   @312

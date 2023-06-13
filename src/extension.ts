@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
 import * as path from "path";
-import * as toml from "toml";
 import { toHtml } from "./components/html";
 import { lines } from "./components/lines";
 import { renderToString } from "react-dom/server";
