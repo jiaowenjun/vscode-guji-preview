@@ -18,6 +18,24 @@
   line-height: 2rem;
 }
 
+.large-circle {
+  box-sizing: border-box;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+}
+
+.large-circle .grid {
+  font-family: "康熙傳承版 KangXiZiDian.com";
+  height: 1.7rem;
+  width: 1.7rem;
+  margin: auto;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
 .small {
   display: flex;
   flex-direction: row-reverse;

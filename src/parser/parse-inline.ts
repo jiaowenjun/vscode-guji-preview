@@ -1,6 +1,6 @@
 import { BlockModel } from "../components/model";
 
-type State = "normal" | "book" | "book-half" | "large";
+type State = "normal" | "book" | "book-half" | "large" | "large-circle";
 let state: State = "normal";
 
 export function isChar(c: string) {
@@ -39,10 +39,26 @@ export function parseInline(line: string) {
     switch (state) {
       // large状态
       case "large":
+        if (c === "(") {
+          state = "large-circle";
+          break;
+        }
         if (isChar(c)) {
           blocks.push({
             t: c,
             si: "large",
+          });
+        }
+        // 消耗一个字符后恢复到 normal
+        state = "normal";
+        break;
+
+      case "large-circle":
+        if (isChar(c)) {
+          blocks.push({
+            t: c,
+            si: "large",
+            st: "circle",
           });
         }
         // 消耗一个字符后恢复到 normal

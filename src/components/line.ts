@@ -3,6 +3,7 @@ import { smallLine } from "./small-line";
 import { small } from "./small";
 import { large } from "./large";
 import { BlockModel, LineModel } from "./model";
+import { largeCircle } from "./large-circle";
 
 let cnt = 0;
 
@@ -29,7 +30,11 @@ function parseLineBlocks(blks: BlockModel[]) {
     if (blk.si === "large" && blk.t) {
       mergeFrags();
       mergeSmallLines();
-      nodes.push(large({ text: blk.t, indent: blk.i ? blk.i : 0 }));
+      if (blk.st === "circle") {
+        nodes.push(largeCircle({ text: blk.t, indent: blk.i ? blk.i : 0 }));
+      } else {
+        nodes.push(large({ text: blk.t, indent: blk.i ? blk.i : 0 }));
+      }
     } else {
       if (blk.st === "br") {
         mergeFrags();

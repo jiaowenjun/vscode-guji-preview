@@ -46,6 +46,10 @@
   margin-top: -2px;
 }
 
+.book + .book + .book-half {
+  margin-top: -3px;
+}
+
 .line:first-child .small-line:first-child .book {
   margin-right: -1px;
 }
