@@ -46,6 +46,17 @@ export function activate(context: vscode.ExtensionContext) {
         // 更新 Webview 内容
         currentPanel.title = content.title;
         currentPanel.webview.html = content.html;
+
+        // 编辑器内容修改时同步更新
+        vscode.workspace.onDidChangeTextDocument((e) => {
+          if (currentPanel) {
+            const content = getWebviewContent();
+            if (content) {
+              currentPanel.title = content.title;
+              currentPanel.webview.html = content.html;
+            }
+          }
+        });
       }
     }
   );
