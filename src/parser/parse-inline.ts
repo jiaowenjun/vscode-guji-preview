@@ -124,6 +124,7 @@ export function parseInline(line: string) {
     consumeFrag();
   } else if (state === "book") {
     consumeBookFrag(true);
+    state = "book-half";
   }
   return blocks;
 }
