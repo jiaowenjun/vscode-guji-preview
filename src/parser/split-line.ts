@@ -8,7 +8,7 @@ export function split(text: string) {
     .map((line) =>
       line
         .trim()
-        .replace(/[。，·":：]/g, "")
+        .replace(/[。，·":：、]/g, "")
         .replace(/　/g, "*")
         .replace(/\/\/.*/, "")
     )
