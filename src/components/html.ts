@@ -8,7 +8,7 @@ export function toHtml({ title, body }: { title: string; body: string }) {
           <title>${title}</title>
           <style>
             html {
-              font-size: 30px;
+              font-size: 25px;
             }
             .lines {
               width: min-content;
