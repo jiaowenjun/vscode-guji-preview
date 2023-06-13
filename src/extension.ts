@@ -18,37 +18,60 @@ export function activate(context: vscode.ExtensionContext) {
       if (currentPanel) {
         currentPanel.reveal(vscode.ViewColumn.Beside);
       } else {
-        // 1. 获取编辑器 .gj 文件的文本
-        const editor = vscode.window.activeTextEditor;
+        // 解析当前编辑器内容
+        const content = getWebviewContent();
 
-        if (!editor) {
+        // 无编辑器
+        if (!content) {
+          vscode.window.showInformationMessage("请打开 Guji 文档");
           return;
         }
-        const text = editor.document.getText();
-        const title = `预览 ${path.basename(editor.document.fileName)}`;
 
-        // 2. 将 .gj 文本转为 html
-        const model = parseLines(text);
-        const html = toHtml({
-          title: model.p.toString(),
-          body: renderToString(lines({ model })),
-        });
-        console.log(html);
-
-        // 3. 创建 Webview 预览窗口
+        // 创建 Webview
         currentPanel = vscode.window.createWebviewPanel(
           "guji-preview",
-          title,
+          "预览 Guji",
           vscode.ViewColumn.Beside
         );
 
-        // 4. 在预览窗口展示 html
-        currentPanel.webview.html = html;
+        // Webview 销毁时
+        currentPanel.onDidDispose(
+          () => {
+            currentPanel = undefined;
+          },
+          null,
+          context.subscriptions
+        );
+
+        // 更新 Webview 内容
+        currentPanel.title = content.title;
+        currentPanel.webview.html = content.html;
       }
     }
   );
 
   context.subscriptions.push(disposable);
+}
+
+function getWebviewContent() {
+  // 1. 获取编辑器 .gj 文件的文本
+  const editor = vscode.window.activeTextEditor;
+
+  if (!editor) {
+    return;
+  }
+
+  const text = editor.document.getText();
+  const title = `预览 ${path.basename(editor.document.fileName)}`;
+
+  // 2. 将 .gj 文本转为 html
+  const model = parseLines(text);
+  const html = toHtml({
+    title: model.p.toString(),
+    body: renderToString(lines({ model })),
+  });
+
+  return { title, html };
 }
 
 export function deactivate() {}
