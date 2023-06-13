@@ -7,9 +7,14 @@ export function isChar(c: string) {
   return !c.match(/[#【】\n]/);
 }
 
-export function parseInline(line: string) {
+export function parseInline(line: string, idx: number) {
   let blocks: BlockModel[] = [];
   let frag = "";
+
+  // 第1行出现后半部书名
+  if (idx === 0 && line.match(/[^【#\n]+】/)) {
+    state = "book-half";
+  }
 
   const consumeFrag = function () {
     if (frag.length > 0) {

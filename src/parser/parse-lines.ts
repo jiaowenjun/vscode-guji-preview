@@ -5,7 +5,7 @@ import { split } from "./split-line";
 export function parseLines(text: string) {
   const lines: LinesModel = { p: -1, l: [] };
   split(text).forEach((line) => {
-    const lineModel = parseLine(line);
+    const lineModel = parseLine(line, lines.l.length);
     if (lineModel.page) {
       lines.p = lineModel.page;
     } else {
