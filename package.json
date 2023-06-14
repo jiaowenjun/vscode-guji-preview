@@ -7,7 +7,7 @@
     "url": "https://github.com/jiaowenjun/vscode-guji-preview.git"
   },
   "publisher": "JiaoWenjun",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "engines": {
     "vscode": "^1.79.0"
   },
