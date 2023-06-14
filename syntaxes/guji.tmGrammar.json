@@ -33,7 +33,7 @@
           "name": "punctuation.paren.close"
         }
       },
-      "name": "expression.group",
+      "name": "guji.book",
       "patterns": [
         {
           "include": "#expression"
