@@ -2,41 +2,76 @@
   "scopeName": "source.guji",
   "patterns": [
     {
-      "include": "#expression"
+      "include": "#block"
     }
   ],
   "repository": {
-    "expression": {
+    "block": {
       "patterns": [
         {
-          "include": "#letter"
+          "include": "#comment"
         },
         {
-          "include": "#paren-expression"
+          "include": "#page-decl"
+        },
+        {
+          "include": "#large-line"
+        },
+        {
+          "include": "#book"
+        },
+        {
+          "include": "#large-circle-letter"
+        },
+        {
+          "include": "#large-letter"
+        },
+        {
+          "include": "#space"
         }
       ]
     },
-    "letter": {
-      "match": "@|#|\\*",
-      "name": "keyword.letter"
+    "comment": {
+      "match": "//.*|，|。|·|：",
+      "name": "comment"
     },
-    "paren-expression": {
+    "page-decl": {
+      "match": "^\\s*@\\d+\\s*$",
+      "name": "guji.page-decl"
+    },
+    "large-line": {
+      "match": "^\\s*#+ [^#【】]+\\s*$",
+      "name": "guji.large-line"
+    },
+    "large-circle-letter": {
+      "match": "#\\([^#【】(]",
+      "name": "guji.large-circle-letter"
+    },
+    "large-letter": {
+      "match": "#[^#【】(]",
+      "name": "guji.large-letter"
+    },
+    "space": {
+      "match": "\\*|　",
+      "name": "guji.space"
+    },
+    "book": {
       "begin": "【",
       "end": "】",
       "beginCaptures": {
         "0": {
-          "name": "punctuation.paren.open"
+          "name": "guji.book.open"
         }
       },
       "endCaptures": {
         "0": {
-          "name": "punctuation.paren.close"
+          "name": "guji.book.close"
         }
       },
       "name": "guji.book",
       "patterns": [
         {
-          "include": "#expression"
+          "include": "#block"
         }
       ]
     }
