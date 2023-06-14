@@ -22,6 +22,13 @@
         "command": "vscode-guji-preview.preview",
         "title": "Guji Preview: 预览 Guji 文件"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "vscode-guji-preview.preview",
+        "key": "ctrl+shift+v",
+        "mac": "cmd+shift+v"
+      }
     ]
   },
   "scripts": {
