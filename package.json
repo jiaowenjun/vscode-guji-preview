@@ -29,6 +29,21 @@
         "key": "ctrl+shift+v",
         "mac": "cmd+shift+v"
       }
+    ],
+    "languages": [
+      {
+        "id": "guji",
+        "extensions": [
+          ".gj"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "guji",
+        "scopeName": "source.guji",
+        "path": "./syntaxes/guji.tmGrammar.json"
+      }
     ]
   },
   "scripts": {
