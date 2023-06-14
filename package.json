@@ -33,16 +33,21 @@
     "languages": [
       {
         "id": "guji",
+        "aliases": [
+          "Guji",
+          "guji"
+        ],
         "extensions": [
           ".gj"
-        ]
+        ],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
       {
         "language": "guji",
         "scopeName": "source.guji",
-        "path": "./syntaxes/guji.tmGrammar.json"
+        "path": "./syntaxes/guji.tmLanguage.json"
       }
     ]
   },

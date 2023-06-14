@@ -1,4 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Guji",
   "scopeName": "source.guji",
   "patterns": [
     {
@@ -10,6 +12,9 @@
       "patterns": [
         {
           "include": "#comment"
+        },
+        {
+          "include": "#punctuation"
         },
         {
           "include": "#page-decl"
@@ -32,7 +37,11 @@
       ]
     },
     "comment": {
-      "match": "//.*|，|。|·|：",
+      "match": "//.*",
+      "name": "comment.guji"
+    },
+    "punctuation": {
+      "match": "，|。|·|：",
       "name": "comment.punctuation.guji"
     },
     "page-decl": {
