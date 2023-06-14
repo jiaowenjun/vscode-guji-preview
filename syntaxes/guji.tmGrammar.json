@@ -33,47 +33,39 @@
     },
     "comment": {
       "match": "//.*|，|。|·|：",
-      "name": "comment"
+      "name": "comment.punctuation.guji"
     },
     "page-decl": {
       "match": "^\\s*@\\d+\\s*$",
-      "name": "guji.page-decl"
+      "name": "comment.page-decl.guji"
     },
     "large-line": {
       "match": "^\\s*#+ [^#【】]+\\s*$",
-      "name": "guji.large-line"
+      "name": "markup.heading.large-line.guji"
     },
     "large-circle-letter": {
       "match": "#\\([^#【】(]",
-      "name": "guji.large-circle-letter"
+      "name": "markup.heading.large-circle-letter.guji"
     },
     "large-letter": {
       "match": "#[^#【】(]",
-      "name": "guji.large-letter"
+      "name": "markup.heading.large-letter.guji"
     },
     "space": {
       "match": "\\*|　",
-      "name": "guji.space"
+      "name": "markup.inline.raw.space.guji"
     },
     "book": {
-      "begin": "【",
-      "end": "】",
-      "beginCaptures": {
-        "0": {
-          "name": "guji.book.open"
-        }
-      },
-      "endCaptures": {
-        "0": {
-          "name": "guji.book.close"
-        }
-      },
-      "name": "guji.book",
-      "patterns": [
-        {
-          "include": "#block"
-        }
-      ]
+      "match": "(【)(.*?)(】)|(【)([^】]*?)$|^([^【]*?)(】)",
+      "captures": {
+        "1": { "name": "punctuation.paren.open.book.guji" },
+        "2": { "name": "markup.underline.book.guji" },
+        "3": { "name": "punctuation.paren.close.book.guji" },
+        "4": { "name": "punctuation.paren.open.book.guji" },
+        "5": { "name": "markup.underline.book.guji" },
+        "6": { "name": "markup.underline.book.guji" },
+        "7": { "name": "punctuation.paren.close.book.guji" }
+      }
     }
   }
 }
