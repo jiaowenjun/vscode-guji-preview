@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
     "vscode-guji-preview.preview",
     () => {
       if (currentPanel) {
-        currentPanel.reveal(vscode.ViewColumn.Beside);
+        currentPanel.reveal(vscode.ViewColumn.Beside, true);
         const editor = vscode.window.activeTextEditor;
         if (editor && currentEditor && editor !== currentEditor) {
           currentEditor = editor;
@@ -41,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
         currentPanel = vscode.window.createWebviewPanel(
           "guji-preview",
           "预览 Guji",
-          vscode.ViewColumn.Beside
+          { viewColumn: vscode.ViewColumn.Beside, preserveFocus: true }
         );
 
         // 更新 Webview 内容
