@@ -60,7 +60,7 @@ export function toHtml({ title, body }: { title: string; body: string }) {
           }
     
           .small .grid {
-            font-family: "中华书局宋体00平面";
+            font-family: "中华书局宋体00平面","中华书局宋体02平面","中华书局宋体15平面";
             height: 1rem;
             width: 1rem;
             font-size: 0.8rem;

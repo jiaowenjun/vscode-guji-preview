@@ -1,5 +1,12 @@
 # vscode-guji-preview
 
+- 命令名: `Guji Preview: 预览 Guji 文件`
+- 快捷键:
+  - Mac: `cmd+shift+v`
+  - Win/Linux: `ctrl+shift+v`
+
+Guji 语法:
+
 |    特殊符号    |  作用范围  |        含义        |
 | :------------: | :--------: | :----------------: |
 | `//`_comment_  |   至行尾   |       行注释       |
@@ -19,14 +26,10 @@
 
 ## 例子
 
-《康熙字典》武英殿版第三一二页:
-
-![Alt text](https://www.kangxizidian.com/kangxi2/0312.jpg)
-
-对应的 guji 文档如下:
+以下 Guji 文档可渲染出《康熙字典》武英殿版第三一二页:
 
 ```gj
-// 0312.gj
+// 文件名: 0312.gj
 
 @312
 
@@ -51,3 +54,25 @@
 神得一以靈谷得一以盈萬物得一以生侯王得一以爲天下
 正*又均也【唐書薛平傳】兵鎧完礪徭賦均一*又誠也【中庸】
 ```
+
+预览效果:
+
+![预览效果](https://s2.loli.net/2023/06/14/aziOjX5BKt2yxPn.png)
+
+《康熙字典》武英殿版第三一二页原图:
+
+![原图](https://www.kangxizidian.com/kangxi2/0312.jpg)
+
+## 字体安装
+
+- 大字字体:
+  - 字体名: `康熙傳承版 KangXiZiDian.com`
+  - 官网链接: [官网](https://www.chinesecj.com/forum/forum.php?mod=viewthread&tid=195626)
+  - 百度云: [下载](https://pan.baidu.com/s/1-0LWkq7bqbv3DxY_dkbrug?pwd=vvgg) (提取码: vvgg)
+- 小字字体:
+  - 字体名: 内含三种字体
+    - `中华书局宋体00平面`
+    - `中华书局宋体02平面`
+    - `中华书局宋体15平面`
+  - 官网链接: [官网](https://www.ancientbooks.cn/helpcore?font)
+  - 百度云: [下载](https://pan.baidu.com/s/1juHLyPnhcXN-18JuRFTASA?pwd=9k69) (提取码: 9k69)
