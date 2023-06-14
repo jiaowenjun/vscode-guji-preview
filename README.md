@@ -57,7 +57,7 @@ Guji 语法:
 
 预览效果:
 
-![预览效果](https://s2.loli.net/2023/06/14/aziOjX5BKt2yxPn.png)
+![预览效果](https://s2.loli.net/2023/06/14/pQOATYlsfjiPqzW.png)
 
 《康熙字典》武英殿版第三一二页原图:
 
