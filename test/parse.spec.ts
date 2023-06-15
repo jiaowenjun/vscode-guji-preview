@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { parseLines } from "../src/parser/parse-lines";
+import { parsePages } from "../src/parser/parse-pages";
 
 test("parse", () => {
   const text = `// 0312.gj
@@ -15,6 +15,8 @@ test("parse", () => {
   #一古文#弌【唐韻】【韻會】於悉切【集韻】【正韻】益悉切，𠀤漪入聲。 
   【說文】惟初大始，道立於一。造分天地，化成萬物。
   
+  @313
+  
   【廣韻】數之始也，物之極也。【易·繫辭】天一地二。【老子·道德經】道生
   一，一生二。　又【廣韻】同也。【禮·樂記】禮樂𠛬政，其極一也。【史記·儒
   
@@ -27,8 +29,7 @@ test("parse", () => {
   神得一以靈，谷得一以盈，萬物得一以生，侯王得一以爲天下
   正。　又均也。【唐書·薛平傳】兵鎧完礪，徭賦均一。　又誠也。【中庸】
   
-  
 `;
-  const lines = parseLines(text);
-  console.log(lines);
+  const pages = parsePages(text);
+  pages.forEach((page) => console.log(page));
 });

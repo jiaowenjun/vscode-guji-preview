@@ -11,7 +11,7 @@ export interface CompoLineModel {
 
 export type LineModel = CompoLineModel | BlockModel;
 
-export interface LinesModel {
+export interface PageModel {
   p: number;
   l: LineModel[];
 }

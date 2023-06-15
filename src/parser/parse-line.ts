@@ -1,6 +1,6 @@
 import { parseInline } from "./parse-inline";
 
-export function parseLine(line: string, idx: number) {
+export function parseLine(line: string) {
   const matchPage = line.match(/^@(\d+)$/);
   if (matchPage) {
     return { page: parseInt(matchPage[1]) };
@@ -16,6 +16,6 @@ export function parseLine(line: string, idx: number) {
   }
 
   return {
-    c: parseInline(line, idx),
+    c: parseInline(line),
   };
 }

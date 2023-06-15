@@ -1,9 +1,9 @@
 import * as vscode from "vscode";
 import * as path from "path";
 import { toHtml } from "./components/html";
-import { lines } from "./components/lines";
+import { page } from "./components/page";
 import { renderToString } from "react-dom/server";
-import { parseLines } from "./parser/parse-lines";
+import { parsePages } from "./parser/parse-pages";
 
 let currentPanel: vscode.WebviewPanel | undefined = undefined;
 let currentEditor: vscode.TextEditor | undefined = undefined;
@@ -99,10 +99,10 @@ function getWebviewContent() {
   const title = `预览 ${path.basename(editor.document.fileName)}`;
 
   // 2. 将 .gj 文本转为 html
-  const model = parseLines(text);
+  const pages = parsePages(text);
   const html = toHtml({
-    title: model.p.toString(),
-    body: renderToString(lines({ model })),
+    title: pages[0].p.toString(),
+    body: renderToString(page({ pageModel: pages[0] })),
   });
 
   return { editor, title, html };

@@ -7,7 +7,7 @@ export function isChar(c: string) {
   return !c.match(/[#【】\n]/);
 }
 
-export function parseInline(line: string, idx: number) {
+export function parseInline(line: string) {
   let blocks: BlockModel[] = [];
   let frag = "";
 

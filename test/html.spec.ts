@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
-import { parseLines } from "../src/parser/parse-lines";
+import { parsePages } from "../src/parser/parse-pages";
 import { toHtml } from "../src/components/html";
-import { lines } from "../src/components/lines";
+import { page } from "../src/components/page";
 import { renderToString } from "react-dom/server";
 
 test("parse", () => {
@@ -45,10 +45,11 @@ test("parse", () => {
   丈。【前漢·律歷志】十分爲寸，十寸爲尺，十尺爲丈，十丈爲引。又【左
   
 `;
-  const model = parseLines(text);
+  const pages = parsePages(text);
+  console.log(pages.length);
   const html = toHtml({
-    title: model.p.toString(),
-    body: renderToString(lines({ model })),
+    title: pages[0].p.toString(),
+    body: renderToString(page({ pageModel: pages[0] })),
   });
   console.log(html);
 });
