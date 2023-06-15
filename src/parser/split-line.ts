@@ -15,6 +15,7 @@ export function split(text: string) {
         .trim()
         .replace(/[。，·":：、]/g, "")
         .replace(/\/\/.*/, "")
+        .replace(/◎/g, "○")
     )
     .filter((line) => line.length > 0);
 }

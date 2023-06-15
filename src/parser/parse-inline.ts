@@ -11,11 +11,6 @@ export function parseInline(line: string, idx: number) {
   let blocks: BlockModel[] = [];
   let frag = "";
 
-  // 第1行出现后半部书名
-  if (idx === 0 && line.match(/[^【#\n]+】/)) {
-    state = "book-half";
-  }
-
   const consumeFrag = function () {
     if (frag.length > 0) {
       blocks.push({
@@ -90,6 +85,11 @@ export function parseInline(line: string, idx: number) {
           consumeFrag();
           // 加换行标记
           blocks.push({ st: "br" });
+        }
+        // book 后半部结束
+        else if (c === "】") {
+          // 保存小字片段
+          consumeBookFrag(true);
         }
         // 普通字符，添加到小字片段
         else if (isChar(c)) {
