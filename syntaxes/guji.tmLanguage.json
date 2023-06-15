@@ -39,6 +39,9 @@
         },
         {
           "include": "#space"
+        },
+        {
+          "include": "#start-bar"
         }
       ]
     },
@@ -91,6 +94,10 @@
         "1": { "name": "markup.underline.book.guji" },
         "2": { "name": "punctuation.paren.close.book.guji" }
       }
+    },
+    "start-bar": {
+      "match": "===*",
+      "name": "markup.heading.start-bar.guji"
     }
   }
 }
