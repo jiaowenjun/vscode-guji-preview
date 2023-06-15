@@ -38,15 +38,15 @@
     },
     "comment": {
       "match": "//.*",
-      "name": "comment.guji"
+      "name": "comment.line.double-slash"
     },
     "punctuation": {
       "match": "，|。|·|：",
-      "name": "comment.punctuation.guji"
+      "name": "comment.line.punctuation.guji"
     },
     "page-decl": {
       "match": "^\\s*@\\d+\\s*$",
-      "name": "comment.page-decl.guji"
+      "name": "comment.line.page-decl.guji"
     },
     "large-line": {
       "match": "^\\s*#+ [^#【】]+\\s*$",
@@ -65,16 +65,19 @@
       "name": "markup.inline.raw.space.guji"
     },
     "book": {
-      "match": "(【)(.*?)(】)|(【)([^】]*?)$|^([^【]*?)(】)",
-      "captures": {
-        "1": { "name": "punctuation.paren.open.book.guji" },
-        "2": { "name": "markup.underline.book.guji" },
-        "3": { "name": "punctuation.paren.close.book.guji" },
-        "4": { "name": "punctuation.paren.open.book.guji" },
-        "5": { "name": "markup.underline.book.guji" },
-        "6": { "name": "markup.underline.book.guji" },
-        "7": { "name": "punctuation.paren.close.book.guji" }
-      }
+      "begin": "【",
+      "end": "】",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.paren.open.book.guji"
+        }
+      },
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.paren.close.book.guji"
+        }
+      },
+      "contentName": "markup.underline.book.guji"
     }
   }
 }
