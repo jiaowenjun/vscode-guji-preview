@@ -1,7 +1,7 @@
 import { expect, test } from "vitest";
 import { parsePages } from "../src/parser/parse-pages";
 import { toHtml } from "../src/components/html";
-import { page } from "../src/components/page";
+import { pages } from "../src/components/pages";
 import { renderToString } from "react-dom/server";
 
 test("parse", () => {
@@ -25,6 +25,8 @@ test("parse", () => {
   
   明七希賢。　又人名。【續仙傳】殷七七，名文祥。【蘇軾詩】安得
   道人殷七七，不論時節遣花開。*【正字通】或通作㭍桼漆。#(增
+
+  @317
   
   #丄
   【集韻】上，古作
@@ -45,11 +47,11 @@ test("parse", () => {
   丈。【前漢·律歷志】十分爲寸，十寸爲尺，十尺爲丈，十丈爲引。又【左
   
 `;
-  const pages = parsePages(text);
-  console.log(pages.length);
+  const pageModels = parsePages(text);
   const html = toHtml({
-    title: pages[0].p.toString(),
-    body: renderToString(page({ pageModel: pages[0] })),
+    title: "古籍",
+    body: renderToString(pages({ pageModels })),
   });
+  console.log(pageModels.length);
   console.log(html);
 });
