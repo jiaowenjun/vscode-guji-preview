@@ -26,6 +26,12 @@
           "include": "#book"
         },
         {
+          "include": "#book-first-half"
+        },
+        {
+          "include": "#book-second-half"
+        },
+        {
           "include": "#large-circle-letter"
         },
         {
@@ -65,19 +71,26 @@
       "name": "markup.inline.raw.space.guji"
     },
     "book": {
-      "begin": "【",
-      "end": "】",
-      "beginCaptures": {
-        "0": {
-          "name": "punctuation.paren.open.book.guji"
-        }
-      },
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.paren.close.book.guji"
-        }
-      },
-      "contentName": "markup.underline.book.guji"
+      "match": "(【)(.+?)(】)",
+      "captures": {
+        "1": { "name": "punctuation.paren.open.book.guji" },
+        "2": { "name": "markup.underline.book.guji" },
+        "3": { "name": "punctuation.paren.close.book.guji" }
+      }
+    },
+    "book-first-half": {
+      "match": "(【)([^】]+?)$",
+      "captures": {
+        "1": { "name": "punctuation.paren.open.book.guji" },
+        "2": { "name": "markup.underline.book.guji" }
+      }
+    },
+    "book-second-half": {
+      "match": "^([^【]+?)(】)",
+      "captures": {
+        "1": { "name": "markup.underline.book.guji" },
+        "2": { "name": "punctuation.paren.close.book.guji" }
+      }
     }
   }
 }
