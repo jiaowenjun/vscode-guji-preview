@@ -1,5 +1,6 @@
 export function split(text: string) {
   let clean = text
+    .replace(/[\s\S]*==.*/, "")
     .split(/\n/)
     .map((line) =>
       line
