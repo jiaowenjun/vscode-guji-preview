@@ -15,6 +15,12 @@ export function parseLine(line: string) {
     };
   }
 
+  if (line.match(/^#$/)) {
+    return {
+      st: "empty",
+    };
+  }
+
   return {
     c: parseInline(line),
   };

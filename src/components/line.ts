@@ -63,6 +63,12 @@ export function line({ model }: { model: LineModel }) {
       { className: "line", key: cnt++ },
       large({ text: model.t, indent: model.i ? model.i : 0 })
     );
+  } else if (model.st === "empty") {
+    return React.createElement(
+      "div",
+      { className: "line", key: cnt++ },
+      large({ text: " ", indent: 0 })
+    );
   } else {
     return null;
   }
