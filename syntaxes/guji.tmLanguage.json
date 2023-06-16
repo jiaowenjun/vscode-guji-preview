@@ -62,7 +62,7 @@
       "name": "markup.heading.large-line.guji"
     },
     "large-circle-letter": {
-      "match": "#\\([^#【】(]",
+      "match": "#\\(.+?\\)|#\\([^#【】()]",
       "name": "markup.heading.large-circle-letter.guji"
     },
     "large-letter": {

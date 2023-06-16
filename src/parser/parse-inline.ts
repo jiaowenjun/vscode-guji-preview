@@ -1,6 +1,12 @@
 import { BlockModel } from "../components/model";
 
-type State = "normal" | "book" | "book-half" | "large" | "large-circle";
+type State =
+  | "normal"
+  | "book"
+  | "book-half"
+  | "large"
+  | "large-circle"
+  | "large-circle-stack";
 export type BookStyle = "book" | "book-start" | "book-middle" | "book-end";
 let state: State = "normal";
 
@@ -31,7 +37,7 @@ export function parseInline(line: string) {
     }
   };
 
-  [...line].forEach((c) => {
+  [...line].forEach((c, i) => {
     // * 转为空格
     if (c === "*") {
       c = " ";
@@ -55,15 +61,37 @@ export function parseInline(line: string) {
         break;
 
       case "large-circle":
-        if (isChar(c)) {
+        console.log(line.at(i + 2));
+        console.log(line.at(i + 3));
+        if (line.at(i + 2) === ")" || line.at(i + 3) === ")") {
+          state = "large-circle-stack";
+          if (isChar(c)) {
+            frag += c;
+          }
+          break;
+        } else if (isChar(c)) {
           blocks.push({
             t: c,
             si: "large",
             st: "circle",
           });
+          // 消耗一个字符后恢复到 normal
+          state = "normal";
         }
-        // 消耗一个字符后恢复到 normal
-        state = "normal";
+        break;
+
+      case "large-circle-stack":
+        if (c === ")") {
+          blocks.push({
+            t: frag,
+            si: "large",
+            st: "circle",
+          });
+          frag = "";
+          state = "normal";
+        } else if (isChar(c)) {
+          frag += c;
+        }
         break;
 
       // normal状态

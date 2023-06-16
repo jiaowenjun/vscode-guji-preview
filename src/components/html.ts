@@ -48,6 +48,12 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             border: 1px solid;
             border-radius: 50%;
           }
+
+          .large-circle .stack {
+            transform: scale(1, 0.5);
+            transform-origin: 0 0.2rem;
+            line-height: 1.3rem;
+          }
     
           .small {
             display: flex;

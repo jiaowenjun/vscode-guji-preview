@@ -10,7 +10,7 @@ export function largeCircle({
   text: string;
   indent: number;
 }) {
-  const indentText = " ".repeat(indent) + text;
+  const indentText = [..." ".repeat(indent), text];
   return React.createElement(
     "div",
     { className: "large-circle", key: cnt++ },
