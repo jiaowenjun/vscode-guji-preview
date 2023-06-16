@@ -6,7 +6,7 @@ let cnt = 0;
 export function book({ text, style }: { text: string; style: string }) {
   return React.createElement(
     "div",
-    { className: style, key: cnt++ },
+    { className: style === "book" ? "book" : ["book", style], key: cnt++ },
     [...text].map((letter) => grid({ letter }))
   );
 }

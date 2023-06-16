@@ -71,78 +71,41 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             border: 1px solid;
             border-radius: 0.3rem;
             margin-top: -1px;
-            margin-left: -1px;
-          }
-    
-          .book:last-child {
-            margin-bottom: -1px;
-          }
-    
-          .book-start {
-            border-top: 1px solid;
-            border-left: 1px solid;
-            border-right: 1px solid;
-            border-top-left-radius: 0.3rem;
-            border-top-right-radius: 0.3rem;
-            margin-top: -1px;
-            margin-left: -1px;
-          }
-    
-          .book-end {
-            border-left: 1px solid;
-            border-right: 1px solid;
-            border-bottom: 1px solid;
-            border-bottom-left-radius: 0.3rem;
-            border-bottom-right-radius: 0.3rem;
             margin-bottom: -1px;
             margin-left: -1px;
-          }
-    
-          .book-middle {
-            border-left: 1px solid;
-            border-right: 1px solid;
-            border-top-left-radius: 0.2rem;
-            border-top-right-radius: 0.2rem;
-            margin-left: -1px;
-          }
-    
-          .book + div {
-            margin-top: -1px;
-          }
-    
-          .book + .book {
-            margin-top: -1px;
-            margin-bottom: -2px;
-          }
-    
-          .book + .book-start {
-            margin-top: -2px;
-          }
-    
-          .book-end + .book {
-            margin-top: -2px;
-          }
-    
-          .book + .book + .book {
-            margin-top: -2px;
-            border-top: 0;
-          }
-    
-          .book + .book + .book-start {
-            margin-top: -2px;
-            border-top: 0;
           }
     
           .line:first-child .small-line:first-child .book {
             margin-right: -1px;
           }
     
-          .line:first-child .small-line:first-child .book-start {
-            margin-right: -1px;
+          .book:has(+ .book) {
+            border-bottom: 0;
           }
     
-          .line:first-child .small-line:first-child .book-end {
-            margin-right: -1px;
+          .book-start {
+            border-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
+          }
+    
+          .book-end {
+            border-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: 0;
+          }
+    
+          .book-middle {
+            border-top: 0;
+            border-top-left-radius: 0.2rem;
+            border-top-right-radius: 0.2rem;
+            margin-top: 0;
+            border-bottom: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-bottom: 0;
           }
           </style>
       </head>
