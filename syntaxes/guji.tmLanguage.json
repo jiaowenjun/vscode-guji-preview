@@ -50,7 +50,7 @@
       "name": "comment.line.double-slash"
     },
     "punctuation": {
-      "match": "[，。·：、]",
+      "match": "[，。·：、《》]",
       "name": "comment.line.punctuation.guji"
     },
     "page-decl": {
