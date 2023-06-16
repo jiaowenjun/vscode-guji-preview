@@ -1,33 +1,33 @@
 # vscode-guji-preview
 
-- 文档后缀名: `.gj`
-- 命令名: `预览古籍`
-- 快捷键:
+- 文檔後綴名: `.gj`
+- 命令名: `預覽古籍`
+- 快捷鍵:
   - Mac: `cmd+shift+v`
   - Win/Linux: `ctrl+shift+v`
 
-Guji 语法:
+Guji 語法:
 
-|    特殊符号    |  作用范围  |        含义        |
+|    特殊符號    |  作用範圍  |        含義        |
 | :------------: | :--------: | :----------------: |
-| `//`_comment_  |   至行尾   |       行注释       |
-|    `@`_num_    |   至行尾   |    指定当前页数    |
-|     `空行`     |            |      大行换行      |
-|     `EOF`      |            |      大行换行      |
+| `//`_comment_  |   至行尾   |       行注釋       |
+|    `@`_num_    |   至行尾   |    指定當前頁數    |
+|     `空行`     |            |      大行換行      |
+|     `EOF`      |            |      大行換行      |
 |   `#␣`_text_   |   至行尾   |      一行大字      |
-|  `##␣`_text_   |   至行尾   |  一行大字缩进一格  |
-|  `###␣`_text_  |   至行尾   |  一行大字缩进两格  |
-|  `↵` (换行符)  |            |      小行换行      |
-|   `#`_char_    | 后一个字符 |   行内的一个大字   |
-|   `#(`_char_   | 后一个字符 | 行内的一个带圈大字 |
-| `【`_text_`】` | 括号内文本 |      行内书名      |
-| `【`_text_`↵`  | 括号至行尾 |     行内半书名     |
-| `^`_text_`】`  | 行首至括号 |     行内半书名     |
-|      `*`       |     无     |      行内空格      |
+|  `##␣`_text_   |   至行尾   |  一行大字縮進一格  |
+|  `###␣`_text_  |   至行尾   |  一行大字縮進兩格  |
+|  `↵` (換行符)  |            |      小行換行      |
+|   `#`_char_    | 後一個字符 |   行內的一個大字   |
+|   `#(`_char_   | 後一個字符 | 行內的一個帶圈大字 |
+| `【`_text_`】` | 括號內文本 |      行內書名      |
+| `【`_text_`↵`  | 括號至行尾 |     行內半書名     |
+| `^`_text_`】`  | 行首至括號 |     行內半書名     |
+|      `*`       |     無     |      行內空格      |
 
 ## 例子
 
-以下 Guji 文档可渲染出《康熙字典》武英殿版第三一二页:
+以下 Guji 文檔可渲染出《康熙字典》武英殿版第三一二頁:
 
 ```gj
 // 文件名: 0312.gj
@@ -56,24 +56,24 @@ Guji 语法:
 正*又均也【唐書薛平傳】兵鎧完礪徭賦均一*又誠也【中庸】
 ```
 
-预览效果:
+預覽效果:
 
-![预览效果](https://s2.loli.net/2023/06/14/pQOATYlsfjiPqzW.png)
+![預覽效果](https://s2.loli.net/2023/06/16/wmWOlIR3CtL1Dgc.png)
 
-《康熙字典》武英殿版第三一二页原图:
+《康熙字典》武英殿版第三一二頁原圖:
 
-![原图](https://www.kangxizidian.com/kangxi2/0312.jpg)
+![原圖](https://www.kangxizidian.com/kangxi2/0312.jpg)
 
-## 字体安装
+## 字體安裝
 
-- 大字字体:
-  - 字体名: `康熙傳承版 KangXiZiDian.com`
-  - 官网链接: [官网](https://www.chinesecj.com/forum/forum.php?mod=viewthread&tid=195626)
-  - 百度云: [下载](https://pan.baidu.com/s/1-0LWkq7bqbv3DxY_dkbrug?pwd=vvgg) (提取码: vvgg)
-- 小字字体:
-  - 字体名: 内含三种字体
-    - `中华书局宋体00平面`
-    - `中华书局宋体02平面`
-    - `中华书局宋体15平面`
-  - 官网链接: [官网](https://www.ancientbooks.cn/helpcore?font)
-  - 百度云: [下载](https://pan.baidu.com/s/1juHLyPnhcXN-18JuRFTASA?pwd=9k69) (提取码: 9k69)
+- 大字字體:
+  - 字體名: `康熙傳承版 KangXiZiDian.com`
+  - 官網鏈接: [官網](https://www.chinesecj.com/forum/forum.php?mod=viewthread&tid=195626)
+  - 百度雲: [下載](https://pan.baidu.com/s/1-0LWkq7bqbv3DxY_dkbrug?pwd=vvgg) (提取碼: vvgg)
+- 小字字體:
+  - 字體名: 內含三種字體
+    - `中華書局宋體00平面`
+    - `中華書局宋體02平面`
+    - `中華書局宋體15平面`
+  - 官網鏈接: [官網](https://www.ancientbooks.cn/helpcore?font)
+  - 百度雲: [下載](https://pan.baidu.com/s/1juHLyPnhcXN-18JuRFTASA?pwd=9k69) (提取碼: 9k69)
