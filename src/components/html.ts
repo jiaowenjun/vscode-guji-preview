@@ -43,8 +43,8 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             height: 1.7rem;
             width: 1.7rem;
             margin: auto;
-            font-size: 1.4rem;
-            line-height: 1.6rem;
+            font-size: 1.5rem;
+            line-height: 1.7rem;
             border: 1px solid;
             border-radius: 50%;
           }
