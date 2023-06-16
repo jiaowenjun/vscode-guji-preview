@@ -1,6 +1,7 @@
 # vscode-guji-preview
 
-- 命令名: `Guji Preview: 预览 Guji 文件`
+- 文档后缀名: `.gj`
+- 命令名: `预览古籍`
 - 快捷键:
   - Mac: `cmd+shift+v`
   - Win/Linux: `ctrl+shift+v`

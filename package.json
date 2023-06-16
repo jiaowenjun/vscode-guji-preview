@@ -1,7 +1,7 @@
 {
   "name": "vscode-guji-preview",
   "displayName": "vscode-guji-preview",
-  "description": "VsCode Guji 文档预览插件",
+  "description": "古籍预览插件",
   "repository": {
     "type": "git",
     "url": "https://github.com/jiaowenjun/vscode-guji-preview.git"
@@ -20,7 +20,7 @@
     "commands": [
       {
         "command": "vscode-guji-preview.preview",
-        "title": "Guji Preview: 预览 Guji 文件"
+        "title": "预览古籍"
       }
     ],
     "keybindings": [
@@ -34,7 +34,7 @@
       {
         "id": "guji",
         "aliases": [
-          "Guji",
+          "古籍",
           "guji"
         ],
         "extensions": [
@@ -49,7 +49,16 @@
         "scopeName": "source.guji",
         "path": "./syntaxes/guji.tmLanguage.json"
       }
-    ]
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "when": "resourceLangId == guji",
+          "command": "vscode-guji-preview.preview",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
