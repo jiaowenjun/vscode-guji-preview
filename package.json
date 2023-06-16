@@ -1,7 +1,7 @@
 {
   "name": "vscode-guji-preview",
   "displayName": "vscode-guji-preview",
-  "description": "古籍预览插件",
+  "description": "古籍預覽插件",
   "repository": {
     "type": "git",
     "url": "https://github.com/jiaowenjun/vscode-guji-preview.git"
@@ -20,7 +20,7 @@
     "commands": [
       {
         "command": "vscode-guji-preview.preview",
-        "title": "预览古籍"
+        "title": "預覽古籍"
       }
     ],
     "keybindings": [
