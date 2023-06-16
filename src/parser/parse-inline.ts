@@ -1,6 +1,7 @@
 import { BlockModel } from "../components/model";
 
 type State = "normal" | "book" | "book-half" | "large" | "large-circle";
+export type BookStyle = "book" | "book-start" | "book-middle" | "book-end";
 let state: State = "normal";
 
 export function isChar(c: string) {
@@ -20,11 +21,11 @@ export function parseInline(line: string) {
     }
   };
 
-  const consumeBookFrag = function (half: boolean) {
+  const consumeBookFrag = function (style: BookStyle) {
     if (frag.length > 0) {
       blocks.push({
         t: frag,
-        st: half ? "book-half" : "book",
+        st: style,
       });
       frag = "";
     }
@@ -89,7 +90,7 @@ export function parseInline(line: string) {
         // book 后半部结束
         else if (c === "】") {
           // 保存小字片段
-          consumeBookFrag(true);
+          consumeBookFrag("book-end");
         }
         // 普通字符，添加到小字片段
         else if (isChar(c)) {
@@ -102,17 +103,17 @@ export function parseInline(line: string) {
         // 书名结束
         if (c === "】") {
           // 保存书名
-          consumeBookFrag(false);
+          consumeBookFrag("book");
           // 恢复到 normal 状态
           state = "normal";
         }
         // 换行
         else if (c === "\n") {
           // 保存前半书名
-          consumeBookFrag(true);
+          consumeBookFrag("book-start");
           // 加换行标记
           blocks.push({ st: "br" });
-          // 进入 book-half 状态
+          // 进入 book-start 状态
           state = "book-half";
         }
         // 普通字符，添加到书名片段
@@ -127,13 +128,17 @@ export function parseInline(line: string) {
         // 书名结束
         if (c === "】") {
           // 保存书名
-          consumeBookFrag(true);
+          consumeBookFrag("book-end");
           // 恢复到 normal 状态
           state = "normal";
         }
         // 普通字符，添加到书名片段
         else if (isChar(c)) {
           frag += c;
+        }
+        // 换行，保存中段书名
+        else if (c === "\n") {
+          consumeBookFrag("book-middle");
         } else {
           state = "normal";
         }
@@ -144,8 +149,10 @@ export function parseInline(line: string) {
   if (state === "normal") {
     consumeFrag();
   } else if (state === "book") {
-    consumeBookFrag(true);
+    consumeBookFrag("book-start");
     state = "book-half";
+  } else if (state === "book-half") {
+    consumeBookFrag("book-middle");
   }
   return blocks;
 }

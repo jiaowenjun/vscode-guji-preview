@@ -10,10 +10,8 @@ export function smallLine({ frags }: { frags: BlockModel[] }) {
     "div",
     { className: "small-line", key: cnt++ },
     frags.map((frag) => {
-      if (frag.st === "book" && frag.t) {
-        return book({ text: frag.t, half: false });
-      } else if (frag.st === "book-half" && frag.t) {
-        return book({ text: frag.t, half: true });
+      if (frag.st && frag.st.startsWith("book") && frag.t) {
+        return book({ text: frag.t, style: frag.st });
       } else if (frag.t) {
         return [...frag.t].map((letter) => grid({ letter }));
       }

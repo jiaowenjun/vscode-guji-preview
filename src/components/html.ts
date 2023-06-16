@@ -78,7 +78,17 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             margin-bottom: -1px;
           }
     
-          .book-half:first-child {
+          .book-start {
+            border-top: 1px solid;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-top-left-radius: 0.3rem;
+            border-top-right-radius: 0.3rem;
+            margin-top: -1px;
+            margin-left: -1px;
+          }
+    
+          .book-end {
             border-left: 1px solid;
             border-right: 1px solid;
             border-bottom: 1px solid;
@@ -88,13 +98,11 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             margin-left: -1px;
           }
     
-          .book-half:last-child {
-            border-top: 1px solid;
+          .book-middle {
             border-left: 1px solid;
             border-right: 1px solid;
-            border-top-left-radius: 0.3rem;
-            border-top-right-radius: 0.3rem;
-            margin-top: -1px;
+            border-top-left-radius: 0.2rem;
+            border-top-right-radius: 0.2rem;
             margin-left: -1px;
           }
     
@@ -107,23 +115,33 @@ export function toHtml({ title, body }: { title: string; body: string }) {
             margin-bottom: -2px;
           }
     
-          .book + .book-half {
+          .book + .book-start {
             margin-top: -2px;
           }
     
-          .book-half + .book {
+          .book-end + .book {
             margin-top: -2px;
           }
     
-          .book + .book + .book-half {
-            margin-top: -3px;
+          .book + .book + .book {
+            margin-top: -2px;
+            border-top: 0;
+          }
+    
+          .book + .book + .book-start {
+            margin-top: -2px;
+            border-top: 0;
           }
     
           .line:first-child .small-line:first-child .book {
             margin-right: -1px;
           }
     
-          .line:first-child .small-line:first-child .book-half {
+          .line:first-child .small-line:first-child .book-start {
+            margin-right: -1px;
+          }
+    
+          .line:first-child .small-line:first-child .book-end {
             margin-right: -1px;
           }
           </style>
